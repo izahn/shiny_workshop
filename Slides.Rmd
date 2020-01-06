@@ -1,6 +1,6 @@
 ---
 title: "Shiny Web Applications in R"
-author: "Ista Zahn"
+author: "Ista Zahn and Jess Cohen-Tanugi"
 output:
   beamer_presentation:
     keep_tex: yes
@@ -34,10 +34,10 @@ There are a few things you need to install in order to follow along with the exa
 
 ## Workshop materials and setup
 
-- Download workshop materials from TODO and unzip.
-- Start Rstudio
-- Open `shiny_workshop_materials.Rproj` (*File \rightarrow Open Project \rightarrow `shiny_workshop_materials.Rproj`*)
-- Open shiny cheatsheet (*Help \rightarrow Cheat sheets \rightarrow Web applications with shiny*)
+1. Download workshop materials from https://github.com/izahn/shiny_workshop/archive/master.zip and unzip.
+2. Start Rstudio
+3. Open `shiny_workshop_materials.Rproj` (*File \rightarrow Open Project \rightarrow `shiny_workshop_materials.Rproj`*)
+4. Open shiny cheatsheet (*Help \rightarrow Cheat sheets \rightarrow Web applications with shiny*)
 
 # What is shiny and what is it good for?
 
@@ -50,19 +50,6 @@ There are a few things you need to install in order to follow along with the exa
 > - The whole R package ecosystem is available for use in your web app!
 
 > - If you already know R shiny makes it easy to build a website.
-
-
-## Shiny learning resources
-
-A number of excellent tutorials and other resources are available, including:
-
-- https://www.linkedin.com/learning/building-data-apps-with-r-and-shiny-essential-training
-
-- https://shiny.rstudio.com/tutorial/
-
-- http://shiny.rstudio.com/articles/
-
-- https://shiny.rstudio.com/images/shiny-cheatsheet.pdf
 
 
 ## Use cases and examples
@@ -249,7 +236,8 @@ to find other input functions in shiny.
 
 - Inputs are *reactive*, meaning that changes trigger updates.
 
-- It is often helpful to `print` or use `str` to examine inputs in your server function so you know what you're dealing with.
+- It is often helpful to `print` or use `str` to examine inputs; `str(reactiveValuesToList(input))`
+  will show the current input names and values.
 
 ## Example: create and use input
 
@@ -352,7 +340,7 @@ Finished
 
 
 
-## Exercise: Spiff up the storms app
+## Exercise 4: Spiff up the storms app
 
 Open the exercise file: *File \rightarrow Open File \rightarrow exercises/04_storms_pretty.R*
 
@@ -369,37 +357,93 @@ Open the exercise file: *File \rightarrow Open File \rightarrow exercises/04_sto
 
 # Interactive tables and graphs
 
-## htmlwidgets
+Javascript is the language of the web, and many of the most popular javascript libraries can be used directly from R.
+
+HTML widgets ( https://www.htmlwidgets.org/ ) allow you to combine client-side interactivity with the power of shiny.
+
 
 ## Interactive tables with DT
 
+The DataTables javascript library can be used to create interactive tables directly from R. Features inlude:
+
+- searching,
+- pagination, 
+- sorting.
+
+Interacting with tables updates `input`, enabling integration with Shiny.
+
+See https://shiny.rstudio.com/articles/datatables.html for more.
+
 ## Interactive graphs with plotly
+
+Plotly is a robust javascript data visualization library with an excellent R package. Features include:
+
+- easy converson of `ggplot` graphs,
+- hover, click, pan and zoom
+- support for  plots, scatter plots, error bars, box plots, heatmaps and much more.
+
+Plotly includes an `event_data` function for retrieving values produced by interacting with the plot. This enables deep integration with Shiny.
+
+See https://plot.ly/r/shiny-coupled-events/ for more.
+
 
 ## Interactive maps with leaflet
 
-> - Tutorial available at https://campus.datacamp.com/courses/interactive-maps-with-leaflet-in-r
+Leaflet is a popular javascript library for producing interactive maps.
+
+Like DataTables, interacting with leaflet maps updates `input`, enabling interacting with shiny.
+
+See http://rstudio.github.io/leaflet/shiny.html for more.
+
+
+## Example: html widgets DT and Plotly
+
+Start
+: *examples/05_htmlwidgets.R*
+
+Finished
+: *examples/05_htmlwidgets_finished.R*
+
+
+## Exercise 5: Interactive storms map
+
+Open the exercise file: *File \rightarrow Open File \rightarrow exercises/05_interactive_storms_map.R*
+
+
+1. Run the app and click on the blue markers. Examine the output in 
+the console to determin the input corresponding to the row number 
+of the clicked observation.
+
+2. Use the slice function to select the row corresponding
+to the clicked marker from the storms data frame and return
+this row to the stormDetails output on line 65.
 
 
 
+# Where to go from here
 
 
-# Reactivity and dynamic UI elements
+## Learning resources
 
-## Creating your own reactive values
+A number of excellent tutorials and other resources are available, including:
 
-## Interdependent input elements
+- https://www.linkedin.com/learning/building-data-apps-with-r-and-shiny-essential-training
 
-## Delaying reactive element updates
+- https://shiny.rstudio.com/tutorial/
+
+- http://shiny.rstudio.com/articles/
+
+- https://shiny.rstudio.com/images/shiny-cheatsheet.pdf
 
 
+## Reactivity and dynamic UI elements
+
+We have only touched on the reactive model shiny uses to enable interactivity. You can learn much more about it at https://vimeo.com/rstudioinc/review/131218530/212d8a5a7a/#t=42m2s
+
+## Debugging shiny apps
+
+We've seeen how to use `print` or `str` to insect values. You can also use breakpoints in Rstudio.
+
+More information about debugging shiny apps is available at https://shiny.rstudio.com/articles/debugging.html
 
 
-# Debugging shiny apps
-
-## Debug with `print`
-
-## Debug with breakpoints
-
-## Debug with shinyjs
-
-## Debug with `reactLog`
