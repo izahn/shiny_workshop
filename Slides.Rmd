@@ -359,7 +359,13 @@ Open the exercise file: *File \rightarrow Open File \rightarrow exercises/04_sto
 
 Javascript is the language of the web, and many of the most popular javascript libraries can be used directly from R.
 
-HTML widgets ( https://www.htmlwidgets.org/ ) allow you to combine client-side interactivity with the power of shiny.
+Objectives:
+
+- Discover available html widgets that can be used in shiny applications.
+
+- Learn how html widgets interact with shiny.
+
+- Practice using html widgets as inputs and outputs in shiny apps.
 
 
 ## Interactive tables with DT
