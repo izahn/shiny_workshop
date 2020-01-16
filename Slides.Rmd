@@ -139,7 +139,7 @@ Option 2: Create a new shiny app from a template
 Open the exercise file: *File \rightarrow Open File \rightarrow exercises/01_new_shiny_app.R*
 
 1. Start typing `shinyapp` and select the shinyapp *snippet*
-![](./img/shiny_snippet.png)
+![](./img/shiny_snippet.png){ width=65% }
 
 2. Save the file and click the "Run App" button. You should see a blank app and no errors!
 
