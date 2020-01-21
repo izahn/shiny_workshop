@@ -463,3 +463,8 @@ We've seeen how to use `print` or `str` to insect values. You can also use break
 More information about debugging shiny apps is available at https://shiny.rstudio.com/articles/debugging.html
 
 
+## Workshop feedback
+
+Help us make DataFest even better by giving us feedback at
+
+http://bit.ly/datafest_eval
