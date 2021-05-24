@@ -44,10 +44,10 @@
 \AtBeginSubsection{
   \frame{\subsectionpage}
 }
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -142,6 +142,9 @@
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{fontawesome5}
 
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 
 \title{Shiny Web Applications in R}
 \author{Ista Zahn}
@@ -399,10 +402,10 @@ We will be using the \texttt{storms} data set distributed with the
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(shiny)}
-\KeywordTok{library}\NormalTok{(dplyr)}
-\KeywordTok{data}\NormalTok{(storms)}
-\KeywordTok{names}\NormalTok{(storms)}
+\FunctionTok{library}\NormalTok{(shiny)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{data}\NormalTok{(storms)}
+\FunctionTok{names}\NormalTok{(storms)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -466,7 +469,7 @@ You can use
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{help.search}\NormalTok{(}\StringTok{"Output"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"shiny"}\NormalTok{)}
+\FunctionTok{help.search}\NormalTok{(}\StringTok{"Output"}\NormalTok{, }\AttributeTok{package =} \StringTok{"shiny"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -543,7 +546,7 @@ You can use
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{help.search}\NormalTok{(}\StringTok{"Input"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"shiny"}\NormalTok{)}
+\FunctionTok{help.search}\NormalTok{(}\StringTok{"Input"}\NormalTok{, }\AttributeTok{package =} \StringTok{"shiny"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -836,13 +839,15 @@ including:
 
 \begin{itemize}
 \item
-  \url{https://www.linkedin.com/learning/building-data-apps-with-r-and-shiny-essential-training}
+  \url{https://mastering-shiny.org/}
 \item
   \url{https://shiny.rstudio.com/tutorial/}
 \item
   \url{http://shiny.rstudio.com/articles/}
 \item
   \url{https://shiny.rstudio.com/images/shiny-cheatsheet.pdf}
+\item
+  \url{https://www.linkedin.com/learning/building-data-apps-with-r-and-shiny-essential-training}
 \end{itemize}
 \end{frame}
 

@@ -439,13 +439,15 @@ Open the exercise file: *File \rightarrow Open File \rightarrow exercises/05_sto
 
 A number of excellent tutorials and other resources are available, including:
 
-- https://www.linkedin.com/learning/building-data-apps-with-r-and-shiny-essential-training
+- https://mastering-shiny.org/
 
 - https://shiny.rstudio.com/tutorial/
 
 - http://shiny.rstudio.com/articles/
 
 - https://shiny.rstudio.com/images/shiny-cheatsheet.pdf
+
+- https://www.linkedin.com/learning/building-data-apps-with-r-and-shiny-essential-training
 
 
 ## Reactivity and dynamic UI elements
